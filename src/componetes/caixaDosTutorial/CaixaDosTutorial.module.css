@@ -1,0 +1,24 @@
+.Caixa{
+    position: relative;
+    width: 30rem;
+    height: 40rem;
+    background-color: var(--cinza);
+    color: var(--preto);
+    box-Shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    overflow: hidden;
+    color: white;
+}
+
+.titulo{
+    position: relative;
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+
+.video{
+    position: relative;
+    top: 0.5rem;
+    margin-left: 3rem;
+    color: var(--preto);
+}

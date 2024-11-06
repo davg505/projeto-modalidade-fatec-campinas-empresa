@@ -1,0 +1,17 @@
+.Trapezioinvertido {
+    width: 300px;
+    height: 50px;
+    background-color: var(--azul);
+    color: var(--branco);
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px; /* Alinha o texto verticalmente */
+    cursor: pointer;
+    outline: none;
+    clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);
+    transform: rotate(270deg); /* Rotaciona o trapézio */
+    transition: background-color 0.3s ease;
+    margin-left: -9rem;
+}

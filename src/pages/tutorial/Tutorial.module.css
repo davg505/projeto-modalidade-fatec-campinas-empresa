@@ -1,0 +1,22 @@
+.Tutorial {
+    display: flex;
+    position: relative;
+    margin-top: 7rem;
+    justify-content: flex-start; /* Alinha os itens horizontalmente à esquerda */
+}
+
+.conteudo{
+    position: relative;
+    margin-top: -5.5rem;
+
+}
+.Title2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    word-wrap: normal;
+    color: var(--branco);
+}
+
+.Menu{
+    margin-right: 5rem;
+    position: relative;
+}

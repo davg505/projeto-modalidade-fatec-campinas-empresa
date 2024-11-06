@@ -1,0 +1,15 @@
+.Dados {
+    display: flex;
+    position: relative;
+    padding-top: 7.5rem;
+    justify-content: flex-start; /* Alinha os itens horizontalmente à esquerda */
+}
+
+.Title {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.MenuDosDados{
+    position: relative;
+    margin-left: 7rem;
+}

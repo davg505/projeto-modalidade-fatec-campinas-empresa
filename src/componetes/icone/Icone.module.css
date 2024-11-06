@@ -1,0 +1,29 @@
+.Icone{
+    position: 'relative'; 
+    width: 50px; /* Largura do quadrado */
+    height: 50px; /* Altura do quadrado */
+    background-color:  #3498db; /* Cor de fundo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px; /* Deixa as bordas arredondadas */
+    color: white; /* Cor do ícone */
+    font-size: 24px; /* Tamanho do ícone */
+    cursor: pointer;
+
+}
+
+.IconeNome {
+    font-size: 14px; /* Tamanho do texto do nome */
+    color: white;
+   
+}
+
+.Icone:hover {
+    background-color: #2e88c4; /* Cor ao passar o mouse */
+  }
+
+  .IconeLink {
+    text-decoration: none;
+    color: inherit; /* Para manter a cor do texto do botão */
+  }

@@ -1,0 +1,14 @@
+.TitulosIcones{
+    position: relative;
+    width: 325px;
+    height: 30px;
+    top: 20px;
+    right: 0;
+    background-color: var(--cinza);
+    color: var(--preto);
+    box-Shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    color: white;
+
+}

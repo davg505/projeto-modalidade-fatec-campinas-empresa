@@ -1,0 +1,36 @@
+.Menu {
+    position: relative; 
+    width: 300px;
+    height: 475px;
+    top: -12rem;
+    background-color: var(--cinza);
+    color: var(--preto);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    color: white;
+    left: 10rem;
+    z-index: 10; /* z-index menor que o modal */
+    
+}
+
+.botaoDados {
+    width: 150px;
+    height: 50px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 10px 20px 30px;
+    margin-bottom: 1rem; /* Adiciona espaçamento entre os botões */
+    display: block; /* Garante que o botão ocupe toda a largura disponível */
+}
+
+
+
+.botaoDadosEditar {
+    width: 80px;
+    height: 30px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 20px 30px;
+    
+}

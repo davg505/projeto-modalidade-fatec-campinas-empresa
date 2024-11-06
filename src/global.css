@@ -1,0 +1,27 @@
+:root {
+  --cinza: #ebebec38;
+  --preto: #272727;
+  --rosa: #f06197;
+  --verde: #36B59F;
+  --branco: #FFFFFF;
+  --verdeFatec:#005b6d;
+  --vermelho: #FF0000;
+  --azul: #3498db;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: bordet-box;
+}
+
+body {
+  background: var(--verdeFatec);
+}
+
+body, input, textarea, button{
+  font-size: 1rem;
+  font-family: sans-serif;
+
+}

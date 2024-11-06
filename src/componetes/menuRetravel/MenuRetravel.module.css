@@ -1,0 +1,33 @@
+.Menu {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    background-color: var(--cinza);
+    color: var(--preto);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Corrigido: box-shadow com letras minúsculas */
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1000; /* Assegura que a caixa esteja acima de outros elementos */
+    display: flex; /* Garante que os filhos sejam exibidos corretamente */
+    flex-direction: column;
+    left: -6rem;
+    top:  -6rem;
+}
+
+.Menu h2 {
+    text-align: center;
+    color: var(--branco); /* Garantir que o texto seja preto e visível */
+}
+
+.menu-icones {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os ícones quebrem a linha se necessário */
+    gap: 30px; /* Espaçamento entre os ícones */
+    justify-content: center; /* Alinha os ícones ao centro */
+    margin-top: 40px;
+}
+
+.menu-icones .icone {
+    flex: 0 1 auto; /* Define o tamanho mínimo de cada ícone */
+    text-align: center; /* Centraliza o conteúdo de cada ícone */
+}

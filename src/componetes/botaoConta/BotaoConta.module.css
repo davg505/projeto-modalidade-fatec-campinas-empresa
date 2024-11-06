@@ -1,0 +1,39 @@
+.BotaoConta {
+    position: 'relative';
+}
+
+.Icone {
+    background-color: var(--branco);
+    color: var(--verdeFatec);
+    border-Radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.Menu{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: var(--branco);
+    color: var(--preto);
+    box-Shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    z-Index: 1;
+}
+
+.Menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+
+
+}
+
+.Menu li{
+    padding: 10px 20px;
+    cursor: pointer;
+
+}
