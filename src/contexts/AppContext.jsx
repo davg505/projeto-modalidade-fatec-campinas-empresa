@@ -9,9 +9,13 @@ export const AppContext = createContext({});
 export const AppContextProvider = (props) => {
     const { children } = props;
 
-    const [tabelaAluno, setTabelaAluno] = useState([]);
+    const [tabelaEmpresa, setTabelaEmpesa] = useState([]);
+
+    const [meusDados, setMeusDados] = useState([]);
 
     const [tabelaEstagio, setTabelaEstagio] = useState([]);
+
+    const [dadoResponsavel, setDadoResponsavel] = useState([]);
 
     const [iconesAluno] = useState([
         { id: 1, sigla: 'E', nome:'Estagio', link: '/estagio', texto:'Estagio' },
@@ -41,6 +45,39 @@ export const AppContextProvider = (props) => {
         { id: 1, sigla: 'SIC', nome:'S.I.Cientifica',  texto:'Solicitar I.Cientifica' },
 
     ]);
+
+
+      // Carrega dados da empresa
+      const carregarTabelaEmpresa = async () => {
+        try {
+            const { data } = await Api.get('/empresa'); // Buscando os dados da API
+            const empresa = data[0]; // Assumindo que a API retorna um array com um único objeto
+            setTabelaEmpesa([
+                { id: 1, nomeColuna: 'Nome da empresa', dadoColuna: empresa.NomeEmpresa },
+                { id: 2, nomeColuna: 'CNPJ', dadoColuna: empresa.CNPJ },
+                { id: 3, nomeColuna: 'Endereco', dadoColuna: empresa.endereco },
+                { id: 4, nomeColuna: 'Cidade', dadoColuna: empresa.local },
+                { id: 5, nomeColuna: 'Estado', dadoColuna: empresa.estado },
+            ]);
+        } catch (error) {
+            console.error('Erro ao carregar dados do empresa', error);
+        }
+    };
+
+     // Carrega dados da empresa
+     const carregarDadosResponsvel = async () => {
+        try {
+            const { data } = await Api.get('/empresaAluno'); // Buscando os dados da API
+            const responsavel = data[0]; // Assumindo que a API retorna um array com um único objeto
+            setDadoResponsavel([
+                { id: 1, nomeColuna: 'Nome do representante', dadoColuna: responsavel.nomeRepresentante },
+                { id: 2, nomeColuna: 'Cargo', dadoColuna: responsavel.cargoFunção },
+                { id: 3, nomeColuna: 'CPF', dadoColuna: responsavel.cpfRepresentante },
+            ]);
+        } catch (error) {
+            console.error('Erro ao carregar dado responsavel', error);
+        }
+    };
 
 
        // Entrada dos dados da empresa. 
@@ -234,28 +271,11 @@ export const AppContextProvider = (props) => {
         }
     };
 
-    // Carrega dados do aluno da pagina estagio 
-    const carregarTabelaAluno = async () => {
-        try {
-            const { data } = await Api.get('/aluno'); // Buscando os dados da API
-            const aluno = data[0]; // Assumindo que a API retorna um array com um único objeto
-            setTabelaAluno([
-                { id: 1, nomeColuna: 'Nome do aluno', dadoColuna: aluno.nomeDoAluno },
-                { id: 2, nomeColuna: 'Email', dadoColuna: aluno.email },
-                { id: 3, nomeColuna: 'Ra', dadoColuna: aluno.ra },
-                { id: 4, nomeColuna: 'Curso', dadoColuna: aluno.curso },
-                { id: 5, nomeColuna: 'Status', dadoColuna: aluno.status },
-                { id: 6, nomeColuna: 'Modalidade', dadoColuna: aluno.modalidade },
-            ]);
-        } catch (error) {
-            console.error('Erro ao carregar dados do aluno:', error);
-        }
-    };
 
       // Carrega lista para os botoes meus dados 
         const listaMeusDados = async () => {
         try {
-            setTabelaAluno([
+            setMeusDados([
                 { id: 1, nomeColuna: 'Meus Dados' },
                 { id: 2, nomeColuna: 'Email'},
                 
@@ -365,11 +385,9 @@ export const AppContextProvider = (props) => {
         <AppContext.Provider
             value={{iconesAluno,
                     iconesEstagio,
-                    tabelaAluno,
                     tabelaEstagio,
                     iconesICientifica,
                     adicionarSolicitacaoEstagio,
-                    carregarTabelaAluno,
                     carregarDadosEstagio,
                     editarSolicitacaoEstagio,
                     cancelarSolicitacaoEstagio,
@@ -377,7 +395,12 @@ export const AppContextProvider = (props) => {
                     enviarDadosTermoNOR,
                     adicionarDadosEmpresa,
                     adicionarDadosEstagioAluno,
+                    meusDados,
                     listaMeusDados,
+                    tabelaEmpresa,
+                    carregarTabelaEmpresa,
+                    dadoResponsavel,
+                    carregarDadosResponsvel,
 
                 }}
         >

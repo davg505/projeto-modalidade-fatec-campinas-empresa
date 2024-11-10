@@ -14,7 +14,7 @@ export const MenuRetravel = () => {
     return (
         <div className={style.Menu}>
                 <div>
-                    <h2>Olá, Aluno. Bem-vindo!</h2>
+                    <h2>Olá, Empresa.SA. Bem-vindo!</h2>
                     <div>
                         <TitulosIcones nomeTitulo={'Minha área'} />
                         <div className={style['menu-icones']}>

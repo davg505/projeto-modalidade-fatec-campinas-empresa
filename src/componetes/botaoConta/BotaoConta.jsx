@@ -16,7 +16,8 @@ export const BotaoConta = () => {
         {showMenu && (
         <div className={style.Menu}>
             <ul >
-            <li>Conta</li>
+            <li>empresa@fatec.br</li>
+            <li>Configuração</li>
             <li>Sair</li>
             </ul>
         </div>

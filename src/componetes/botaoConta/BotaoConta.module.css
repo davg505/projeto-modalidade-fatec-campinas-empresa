@@ -14,7 +14,7 @@
 
 .Menu{
     position: absolute;
-    top: 50px;
+    top: 8rem;
     right: 0;
     background-color: var(--branco);
     color: var(--preto);

@@ -7,6 +7,8 @@
 
 .Title {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-left: 20rem;
+    margin-left: 2rem;
+    margin-top: -6rem;
     color: var(--branco);
+    line-height: 3;
 }
