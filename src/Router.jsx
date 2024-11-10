@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { LayoutPadrao } from "./layout/layoutPadrao/LayoutPadrao";
-import { Avisos, Error404, Inicial, MeusDados, Tutorial } from './pages';
+import { Avisos, EProfissional, Error404, ICientifica, Inicial, MeusDados, Tutorial } from './pages';
+import { Estagio } from "./pages/estagio/Estagio";
 
 
 export const Router = () => {
@@ -11,6 +12,9 @@ export const Router = () => {
                 <Route path="dados" element={<MeusDados />} />
                 <Route path="avisos" element={<Avisos />} />
                 <Route path="tutorial" element={<Tutorial />} />
+                <Route path="estagio" element={<Estagio />} />
+                <Route path="ic" element={<ICientifica/>} />
+                <Route path="ep" element={<EProfissional />} />
             </Route>
             <Route path="*" element={<Error404 />} /> {/* Captura qualquer rota não encontrada */}
         </Routes>

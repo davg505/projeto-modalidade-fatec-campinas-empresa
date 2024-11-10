@@ -1,0 +1,46 @@
+.tabela table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-left: -20rem;
+}
+
+.tabela th, .tabela td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: var(--branco);
+}
+
+.tabela button{
+    background-color: var(--azul);
+    color: var(--branco);
+    width: 150px;
+    height: 50px;
+    border-radius: 10px 20px 30px;
+}
+
+.botaoDados {
+    width: 50rem;
+    height: 5rem;
+    background-color:var(--azul);
+    color: var(--branco);
+    border-radius: 10px 10px 30px;
+    margin-bottom: 1rem; /* Adiciona espaçamento entre os botões */
+    display: block; /* Garante que o botão ocupe toda a largura disponível */
+    margin-left: -22rem;
+}
+
+.dadosItem{
+    margin-left: 0.5rem; 
+    margin-top: 1rem; 
+}
+
+.botaoDadosEditar {
+    width: 7rem;
+    height: 1.5rem;
+    background-color: var(--azul);
+    color: var(--branco);
+    border-radius: 20px 30px;
+    
+}
+

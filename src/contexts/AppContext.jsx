@@ -17,10 +17,12 @@ export const AppContextProvider = (props) => {
 
     const [dadoResponsavel, setDadoResponsavel] = useState([]);
 
+    const [ListaMenuAcesso, setListaMenuAcesso] = useState([]);
+
     const [iconesAluno] = useState([
         { id: 1, sigla: 'E', nome:'Estagio', link: '/estagio', texto:'Estagio' },
-        { id: 2, sigla: 'IC', nome:'I.Cientifica', link: '/iniciacaocientifica' , texto:'Iniciação Cientifica' },
-        { id: 3, sigla: 'EP', nome:'E.Profissional' , link: '/estagio', texto:'Equivalencia Profissional'},
+        { id: 2, sigla: 'IC', nome:'I.Cientifica', link: '/ic' , texto:'Iniciação Cientifica' },
+        { id: 3, sigla: 'EP', nome:'E.Profissional' , link: '/ep', texto:'Equivalencia Profissional'},
         { id: 4, sigla: 'MA', nome:'Avisos', link: '/avisos', texto:'Avisos' },
         { id: 5, sigla: 'MD', nome:'Dados',  link: '/dados', texto:'Meus dados' },
         { id: 6, sigla: 'T', nome:'Tutorial',  link: '/tutorial', texto:'Tutorial' },
@@ -48,7 +50,7 @@ export const AppContextProvider = (props) => {
 
 
       // Carrega dados da empresa
-      const carregarTabelaEmpresa = async () => {
+    const carregarTabelaEmpresa = async () => {
         try {
             const { data } = await Api.get('/empresa'); // Buscando os dados da API
             const empresa = data[0]; // Assumindo que a API retorna um array com um único objeto
@@ -65,7 +67,7 @@ export const AppContextProvider = (props) => {
     };
 
      // Carrega dados da empresa
-     const carregarDadosResponsvel = async () => {
+    const carregarDadosResponsvel = async () => {
         try {
             const { data } = await Api.get('/empresaAluno'); // Buscando os dados da API
             const responsavel = data[0]; // Assumindo que a API retorna um array com um único objeto
@@ -78,6 +80,132 @@ export const AppContextProvider = (props) => {
             console.error('Erro ao carregar dado responsavel', error);
         }
     };
+
+            const [TabelaTotalAlunoEstagio, setTabelaTotalAlunoEstagio] = useState([]);
+             // Função para carregar Tebela Total Aluno Estagio
+            const carregarTebelaTotalAlunoEstagio = () => {
+                const tabelaDados = Array.from({ length: 50 }, (_, index) => ({
+                    nomeAluno: `Aluno ${index + 1}`,
+                    email: `aluno${index + 1}@exemplo.com`,
+                    ra: `RA${1000 + index}`,
+                    curso: `Curso GTI`, // Exemplos variados de cursos
+                    semestre: `${index % 10 + 1}º`,
+                    dataInicial: `2024-01-0${(index % 9) + 1}`,
+                    dataFinal: `2024-12-0${(index % 9) + 1}`,
+                    ano: 2024,
+                    modalidade: 'Estagio' ,
+                    status: index % 3 === 0 ? 'Com solicitação' : 'Sem solicitação',
+                    aprovado: index % 2 === 0 ? 'Aprovado' : 'Reprovado',
+                    enviarDiretor: false // Exemplo de valor booleano
+                }));
+            
+                setTabelaTotalAlunoEstagio(tabelaDados);
+            };
+    
+    
+            const [TebelaSemSolicitacaoEstagio, setTebelaSemSolicitacaoEstagio] = useState([]);
+                // Função para carregar Tebela Total Aluno Estagio
+            const carregarTebelaSemSolicitacaoEstagio = () => {
+                const tabelaDados = Array.from({ length: 10 }, (_, index) => ({
+                    nomeAluno: `Aluno ${index + 1}`,
+                    email: `aluno${index + 1}@exemplo.com`,
+                    ra: `RA${1000 + index}`,
+                    curso: `Curso GTI`, // Exemplos variados de cursos
+                    semestre: `${index % 10 + 1}º`,
+                    dataInicial: `2024-01-0${(index % 9) + 1}`,
+                    dataFinal: `2024-12-0${(index % 9) + 1}`,
+                    ano: 2024,
+                    modalidade: 'Estagio' ,
+                    status: 'Sem solicitação',
+                    aprovado: index % 2 === 0 ? 'Aprovado' : 'Reprovado',
+                    enviarDiretor: false // Exemplo de valor booleano
+                }));
+            
+                setTebelaSemSolicitacaoEstagio(tabelaDados);
+            };
+    
+            const [TebelaComSolicitacaoEstagio, setTebelaComSolicitacaoEstagio] = useState([]);
+                // Função para carregar Tebela Total Aluno Estagio
+                const carregarTebelaComSolicitacaoEstagio = () => {
+                    const tabelaDados = Array.from({ length: 23 }, (_, index) => ({
+                        nomeAluno: `Aluno ${index + 1}`,
+                        email: `aluno${index + 1}@exemplo.com`,
+                        ra: `RA${1000 + index}`,
+                        curso: `Curso GTI`, // Exemplos variados de cursos
+                        semestre: `${index % 10 + 1}º`,
+                        dataInicial: `2024-01-0${(index % 9) + 1}`,
+                        dataFinal: `2024-12-0${(index % 9) + 1}`,
+                        ano: 2024,
+                        modalidade: 'Estagio' ,
+                        status:  'Com solicitação',
+                        aprovado: index % 2 === 0 ? 'Aprovado' : 'Reprovado',
+                        enviarDiretor: false // Exemplo de valor booleano
+                    }));
+                
+                    setTebelaComSolicitacaoEstagio(tabelaDados);
+                };
+    
+    
+                const [TebelaEstagioCancelado, setTebelaEstagioCancelado] = useState([]);
+                    // Função para carregar Tebela Total Aluno Estagio
+            const carregarTebelaEstagioCancelado = () => {
+                const tabelaDados = Array.from({ length: 25 }, (_, index) => ({
+                    nomeAluno: `Aluno ${index + 1}`,
+                    email: `aluno${index + 1}@exemplo.com`,
+                    ra: `RA${1000 + index}`,
+                    curso: `Curso GTI`, // Exemplos variados de cursos
+                    semestre: `${index % 10 + 1}º`,
+                    dataInicial: `2024-01-0${(index % 9) + 1}`,
+                    dataFinal: `2024-12-0${(index % 9) + 1}`,
+                    ano: 2024,
+                    modalidade: 'Estagio',
+                    status: 'Cancedado',
+                    aprovado: index % 2 === 0 ? 'Aprovado' : 'Reprovado',
+                    enviarDiretor: false // Exemplo de valor booleano
+                }));
+            
+                setTebelaEstagioCancelado(tabelaDados);
+            };
+
+     // Função para carregar lista geral de Dados
+     const carregarListaMenuAcesso = async () => {
+        try {
+            setListaMenuAcesso([
+                { id: 1, nomeColuna: 'Lista Total de Alunos Estagio' },
+                { id: 2, nomeColuna: 'Lista sem Solicitação Estagio' },
+                { id: 3, nomeColuna: 'Lista com Solicitação Estagio' },
+                { id: 4, nomeColuna: 'Lista de Estagio Cancelado' },
+                { id: 5, nomeColuna: 'Lista Total de Alunos Iniciação científica' },
+                { id: 6, nomeColuna: 'Lista sem Solicitação Iniciação científica' },
+                { id: 7, nomeColuna: 'Lista com Solicitação Iniciação científica' },
+                { id: 8, nomeColuna: 'Lista de Iniciação científica Cancelado' },
+                { id: 9, nomeColuna: 'Lista Total de Alunos Equivalência profissional' },
+                { id: 10, nomeColuna: 'Lista sem Solicitação Equivalência profissional' },
+                { id: 11, nomeColuna: 'Lista com Solicitação Equivalência profissional' },
+                { id: 12, nomeColuna: 'Lista de Equivalência profissional Cancelado' },
+            ]);
+        } catch (error) {
+            console.error('Erro ao carregar dados:', error);
+        }
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
        // Entrada dos dados da empresa. 
@@ -401,6 +529,17 @@ export const AppContextProvider = (props) => {
                     carregarTabelaEmpresa,
                     dadoResponsavel,
                     carregarDadosResponsvel,
+
+                    TabelaTotalAlunoEstagio,
+                    TebelaSemSolicitacaoEstagio,
+                    TebelaComSolicitacaoEstagio,
+                    TebelaEstagioCancelado,
+                    ListaMenuAcesso,
+                    carregarTebelaTotalAlunoEstagio,
+                    carregarTebelaSemSolicitacaoEstagio,
+                    carregarTebelaComSolicitacaoEstagio,
+                    carregarTebelaEstagioCancelado,
+                    carregarListaMenuAcesso,
 
                 }}
         >
